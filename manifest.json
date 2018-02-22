@@ -1,0 +1,23 @@
+{
+  "name": "Origin Requests Only",
+  "version": "1.0.0",
+  "description": "Origin Requests Only",
+  "background": {"page": "background.html", "persistent":true}, 
+  "permissions" : [
+    "webRequest",
+    "webRequestBlocking",
+    "webNavigation",
+    "storage",
+    "tabs",
+    "notifications",
+    "<all_urls>",
+    "system.display",
+    "unlimitedStorage",
+    "contextMenus",
+	"activeTab"
+  ],
+  "icons" : {
+    "20" : "img/icon_20.png"
+  },
+  "manifest_version": 2
+}
