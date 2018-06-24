@@ -2,8 +2,11 @@
   "name": "Origin Requests Only (Firewall)",
   "version": "1.1.0",
   "description": "Origin Requests Only block all requests that isn't from current site domain or sub domain. Preventing spy, tracking and ads.",
-  "background": {"page": "background.html", "persistent":true}, 
-  "permissions" : [
+  "background": {
+    "page": "background.html",
+    "persistent": true
+  },
+  "permissions": [
     "webRequest",
     "webRequestBlocking",
     "webNavigation",
@@ -14,10 +17,10 @@
     "system.display",
     "unlimitedStorage",
     "contextMenus",
-	"activeTab"
+    "activeTab"
   ],
-  "icons" : {
-    "20" : "img/icon_20.png",
+  "icons": {
+    "20": "img/icon_20.png",
     "128": "img/icon_128.png"
   },
   "browser_action": {

@@ -7,7 +7,7 @@
 
 var knownSelectors = [];
 
-redrawTable ();
+redrawTable();
 setInterval(redrawTable, 1500);
 
 function redrawTable()
@@ -28,61 +28,71 @@ function redrawTable()
 
 var helloApp = angular.module("helloApp", []);
 
-helloApp.directive('myDirective', function () {
-    return function (scope, element, attr) {
-        attr.$observe('value', function(actual_value) {
+helloApp.directive('myDirective', function ()
+{
+    return function (scope, element, attr)
+    {
+        attr.$observe('value', function (actual_value)
+        {
             element.val(actual_value);
         });
-        attr.$observe('myChecked', function(actual_value) {
+        attr.$observe('myChecked', function (actual_value)
+        {
             //debugger;
-            if(actual_value === 'true')
-                element.attr('checked',actual_value);
+            if (actual_value === 'true')
+                element.attr('checked', actual_value);
         });
     }
 });
 
-helloApp.directive('myStatus', function () {
-    return function (scope, element, attr) {
-        attr.$observe('allowed', function(actual_value) {
+helloApp.directive('myStatus', function ()
+{
+    return function (scope, element, attr)
+    {
+        attr.$observe('allowed', function (actual_value)
+        {
             //debugger;
-            if(actual_value === 'true')
-                element.attr('style',"color: #05c705;");
+            if (actual_value === 'true')
+                element.attr('style', "color: #05c705;");
             else
-                element.attr('style',"color: #000;");
+                element.attr('style', "color: #000;");
         });
     }
 });
 
-helloApp.directive('myStatusWithRed', function () {
-    return function (scope, element, attr) {
-        attr.$observe('allowed', function(actual_value) {
+helloApp.directive('myStatusWithRed', function ()
+{
+    return function (scope, element, attr)
+    {
+        attr.$observe('allowed', function (actual_value)
+        {
             //debugger;
-            if(actual_value === 'true')
-                element.attr('style',"color: #05c705;");
+            if (actual_value === 'true')
+                element.attr('style', "color: #05c705;");
             else
-                element.attr('style',"color: red;");
+                element.attr('style', "color: red;");
         });
     }
 });
 
-helloApp.controller("CompanyCtrl", function($scope)
+helloApp.controller("CompanyCtrl", function ($scope)
 {
     $scope.companies = [
 
         /*{
-            'id': 'Cognizant Technologies',
-            'host': 100000,
-            'selector': 'Bangalore'
-        },*/
+         'id': 'Cognizant Technologies',
+         'host': 100000,
+         'selector': 'Bangalore'
+         },*/
     ];
 
-    window.initSelectors = function(selectors)
-	{
-        for(var i in selectors)
+    window.initSelectors = function (selectors)
+    {
+        for (var i in selectors)
         {
             var exist = false;
             for (var j in knownSelectors)
-                if(selectors[i].targetDomain === knownSelectors[j].targetDomain)
+                if (selectors[i].targetDomain === knownSelectors[j].targetDomain)
                 {
                     exist = true;
                     knownSelectors[j].rCount = selectors[i].rCount;
@@ -90,17 +100,16 @@ helloApp.controller("CompanyCtrl", function($scope)
                     knownSelectors[j].allowFlag = selectors[i].allowFlag;
                     break;
                 }
-            if(!exist)
+            if (!exist)
                 knownSelectors.push(selectors[i]);
         }
-
 
 
         $scope.companies = knownSelectors;
         $scope.$apply();
 
 
-        $(".allow-ceckbox").on("click", /*"input[type=checkbox]",*/ function()
+        $(".allow-ceckbox").on("click", /*"input[type=checkbox]",*/ function ()
         {
             var jqThis = $(this);
             chrome.tabs.query({active: true, currentWindow: true}, function (tabs)
@@ -114,12 +123,12 @@ helloApp.controller("CompanyCtrl", function($scope)
                         allow: jqThis[0].checked
                     }, function (res)
                     {
-                        redrawTable ();
+                        redrawTable();
                     });
                 }
             });
         });
-	};
+    };
 
     $scope.addRow = function ()
     {

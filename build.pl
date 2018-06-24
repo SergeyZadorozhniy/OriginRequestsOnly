@@ -9,7 +9,7 @@ use Archive::Zip qw( :ERROR_CODES :CONSTANTS );
 
 sub END {
     print STDERR "Ok";
-    sleep(5);  
+    sleep(0);
 }
 
 my $build_dir = './workspace/build_dir/';

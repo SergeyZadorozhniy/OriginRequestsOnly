@@ -7,64 +7,70 @@
 -->
 <html ng-app="helloApp">
 <head>
-	<style>
+    <style>
 
-	.fullhr {
-		margin-top: 0px;
-		margin-bottom: 0px;	
-		border: none;
-		height: 1px;
-		background-color: #eee;		
-	}
+        .fullhr {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            border: none;
+            height: 1px;
+            background-color: #eee;
+        }
 
-	p{
-		text-align: center;
-		font-size: 12px;
-		font-family: Trebuchet MS;
-	}
+        p {
+            text-align: center;
+            font-size: 12px;
+            font-family: Trebuchet MS;
+        }
 
-	table, th, td {
-		border: 0.2px solid black;
-		border-spacing: 0px;
-	}
+        table, th, td {
+            border: 0.2px solid black;
+            border-spacing: 0px;
+        }
 
-    table {
-        border-collapse: collapse;
-    }
-    table td {
-        /*border: 5px solid black;*/
-    }
-    table tr:first-child td {
-        border-top: 0;
-    }
-    table tr td:first-child {
-        border-left: 0;
-    }
-    table tr:last-child td {
-        border-bottom: 0;
-    }
-    table tr td:last-child {
-        border-right: 0;
-    }
+        table {
+            border-collapse: collapse;
+        }
 
-	.title{
-        font-size: 16px;
-    }
-	</style>
+        table td {
+            /*border: 5px solid black;*/
+        }
 
-	<script type="text/javascript" src="lib/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="lib/angular.min.js"></script>
+        table tr:first-child td {
+            border-top: 0;
+        }
+
+        table tr td:first-child {
+            border-left: 0;
+        }
+
+        table tr:last-child td {
+            border-bottom: 0;
+        }
+
+        table tr td:last-child {
+            border-right: 0;
+        }
+
+        .title {
+            font-size: 16px;
+        }
+    </style>
+
+    <script type="text/javascript" src="lib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="lib/angular.min.js"></script>
 </head>
 <body style="width: 400px; margin: 0px; padding: 0px;" ng-controller="CompanyCtrl">
 
-	<div style="margin: 10px; margin-bottom: 0px;">
-		<div style="width: 380px;height: 27px; text-align: center;" >
-			<a id="link" target="_blank" href="https://chrome.google.com/webstore/detail/origin-requests-only-fire/kadfhmhfoplfpmffcfanpnphhjbilifl"
-			    class="title">Origin Requests Only (Firewall)</a>
-			<span style="color: #ccc;font-size: 6px; cursor: default;">v.1.0.1</span>
-				
-		</div>
-		<hr style="
+<div style="margin: 10px; margin-bottom: 0px;">
+    <div style="width: 380px;height: 27px; text-align: center;">
+        <a id="link" target="_blank"
+           href="https://chrome.google.com/webstore/detail/origin-requests-only-fire/kadfhmhfoplfpmffcfanpnphhjbilifl"
+           class="title">Origin Requests Only (Firewall)</a>
+        <span style="color: #ccc;font-size: 6px; cursor: default;">v.1.0.1</span>
+
+    </div>
+    <hr style="
 			margin-top: 0px;
 			border: none;
 			height: 1px;
@@ -72,31 +78,34 @@
 			margin-bottom: 7px;
 		">
 
-	</div>
-	<p>Out of Origin requests detected:</p>
-	<!-- ANGULAR -->
-	<div ng-app = "" ng-init = "countries = [{locale:'en-US',name:'United States'}, {locale:'en-GB',name:'United Kingdom'}, {locale:'en-FR',name:'France'}]" style="">
+</div>
+<p>Out of Origin requests detected:</p>
+<!-- ANGULAR -->
+<div ng-app=""
+     ng-init="countries = [{locale:'en-US',name:'United States'}, {locale:'en-GB',name:'United Kingdom'}, {locale:'en-FR',name:'France'}]"
+     style="">
 
-		<table class="table" style="margin-left: auto; margin-right: auto; width: 100%;">
-			<tr>
-				<!--th>Id
-				</th-->
-				<th>Target Domain</th>
-                <th>Requests</th>
-				<th>Status</th>
-                <th>Allow</th>
-			</tr>
-			<tr ng-repeat="company in companies">
-				<td my-status allowed="{{company.allowFlag}}">{{company.targetDomain}}</td>
-                <td my-status allowed="{{company.allowFlag}}" >{{company.rCount}}</td>
-				<td my-status-with-red allowed="{{company.allowFlag}}">{{company.status}}</td>
-				<td><input my-directive type="checkbox" id="allow" class="allow-ceckbox" value="{{company.targetDomain}}" my-checked="{{company.allowFlag}}">
-                    <label for="allow"></label></td>
-			</tr>
-		</table>
+    <table class="table" style="margin-left: auto; margin-right: auto; width: 100%;">
+        <tr>
+            <!--th>Id
+            </th-->
+            <th>Target Domain</th>
+            <th>Requests</th>
+            <th>Status</th>
+            <th>Allow</th>
+        </tr>
+        <tr ng-repeat="company in companies">
+            <td my-status allowed="{{company.allowFlag}}">{{company.targetDomain}}</td>
+            <td my-status allowed="{{company.allowFlag}}">{{company.rCount}}</td>
+            <td my-status-with-red allowed="{{company.allowFlag}}">{{company.status}}</td>
+            <td><input my-directive type="checkbox" id="allow" class="allow-ceckbox" value="{{company.targetDomain}}"
+                       my-checked="{{company.allowFlag}}">
+                <label for="allow"></label></td>
+        </tr>
+    </table>
 
-	</div>
+</div>
 
-	<script type="text/javascript" src="popup.js"></script>
+<script type="text/javascript" src="popup.js"></script>
 </body>
 </html>
