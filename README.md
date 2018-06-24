@@ -1,0 +1,1 @@
+# [Google Chrome Extension](https://chrome.google.com/webstore/detail/origin-requests-only-fire/kadfhmhfoplfpmffcfanpnphhjbilifl)
