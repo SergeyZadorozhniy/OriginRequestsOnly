@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5cd540e2-f95b-43a1-9168-f907dcbb63d4" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/background.js" afterPath="$PROJECT_DIR$/background.js" />
+      <change beforePath="$PROJECT_DIR$/build.pl" afterPath="$PROJECT_DIR$/build.pl" />
+      <change beforePath="$PROJECT_DIR$/manifest.json" afterPath="$PROJECT_DIR$/manifest.json" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="background.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/background.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manifest.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/manifest.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="popup.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/popup.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="526">
+              <caret line="91" column="38" lean-forward="false" selection-start-line="91" selection-start-column="38" selection-end-line="91" selection-end-column="38" />
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.pl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.pl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="43" column="4" lean-forward="true" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="popup.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/popup.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="621">
+              <caret line="62" column="48" lean-forward="false" selection-start-line="62" selection-start-column="48" selection-end-line="62" selection-end-column="48" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>knownTabs</find>
+      <find>\/\*\n \* Copyright \(c\) 2015 Sergey Zadorozhniy\. The content presented herein may not\, under any circumstances\, \n \* be reproduced in whole or in any part or form without written permission from Sergey Zadorozhniy\.\n \* Zadorozhniy\.Sergey\@gmail\.com\n \*\/\n\&quot;use strict\&quot;\;\n\n\/\*var rangeSlider \= \$\(\'\.js\-range\-slider\'\)\;\n\nrangeSlider\.ionRangeSlider\(\{\n    grid\: true\,\n    min\: 0\,\n    max\: 100\,\n\	from_min\: 20\,    \n\	from_max\: 80\,\n    step\: 1\,\n\	hide_min_max\: true\,\n    \/\/hide_from_to\: true\,\n\	keyboard\: true\,\n\	keyboard_step\: 1\.1\,\n    prettify_enabled\: true\,\n    prettify\: function \(seconds\) \{\n\	return seconds \+ \&quot; \%\&quot;\;\n\}\,\n\	onFinish\: function \(data\) \{\n\	\	\'use strict\'\;\n\	\	\n        console\.log\(\&quot;onFinish\&quot;\,data\)\;\n\	\	\n\	\	chrome\.extension\.sendMessage\(\{ method\: \'\[SplitSearch\:changeSetting\]\'\, verticalProportion\: data\.from\}\n\	\	\)\;\n    \}\n\}\)\;\*\/\n\n\/\/var slider \= rangeSlider\.data\(\&quot;ionRangeSlider\&quot;\)\;\n\nchrome\.tabs\.query\(\{active\: true\, currentWindow\: true\}\, function\(tabs\)\n\{\n    chrome\.extension\.sendMessage\(\{method\: \'\[ORO\:popupQuery\]\'\, tabId\: tabs\[0\]\.id\}\, function \(res\)\n    \{\n        \'use strict\'\;\n\n        \/\/slider\.update\(\{from\: res\.verticalProportion\}\)\;\n\n        \/\/\$\(\&quot;\#selectorInput\&quot;\)\.val\(res\.lastUserSelector\)\;\n\n        initSelectors\(res\.selectors\)\;\n    \}\)\;\n\}\)\;\n\ndocument\.querySelector\(\'\#testButton\'\)\.onclick \= function \(\) \{\n\	\'use strict\'\;\n\	\n\	var value \= document\.querySelector\(\'\#selectorInput\'\)\.value\;\n\	if\(value \!\= null\)\n\	\{\n\	    chrome\.extension\.sendMessage\(\{ method\: \'\[SplitSearch\:toInject\:highlightLink\]\'\, selector\: value\}\)\;\n\	\}\n\}\;\n\ndocument\.querySelector\(\'\#selectByMouseButton\'\)\.onclick \= function \(\) \{\n    \'use strict\'\;\n\n    chrome\.extension\.sendMessage\(\{ method\: \'\[SplitSearch\:toInject\:DrawAddRuleWizardDialog\]\'\}\)\;\n\}\;\n\ndocument\.querySelector\(\'\#addButton\'\)\.onclick \= function \(\) \{\n\	\'use strict\'\;\n    \n    var value \= document\.querySelector\(\'\#selectorInput\'\)\.value\;\n\	if\(value \!\= null\)\n\	\{\n        chrome\.tabs\.query\(\{ currentWindow\: true\, active\: true \}\, function \(tabs\)\n        \{\n            chrome\.extension\.sendMessage\(\{method\: \'\[SplitSearch\:addSelector\]\'\, selector\: value\, tab\: tabs\[0\]\}\, function \(res\)\n\	\	\	\{\n                initSelectors\(res\.selectors\)\;\n\n                setTimeout\(function\(\)\{window\.close\(\)\;\}\, 300\)\;\n            \}\)\;\n        \}\)\;\n\	\}\n\}\;\n\n\$\(\&quot;\#allow\&quot;\)\.on\(\&quot;click\&quot;\, \&quot;input\[type\=checkbox\]\&quot;\, function\(\)\{\n    chrome\.tabs\.query\(\{active\: true\, currentWindow\: true\}\, function\(tabs\)\n    \{\n        if\(\$\(this\)\.checked\(\)\)\n        \{\n    \n                chrome\.extension\.sendMessage\(\{method\: \'\[ORO\:allowRequest\]\'\, tabId\: tabs\[0\]\.id\, targetDomain\: \$\(this\)\.val\(\)\}\, function \(res\)\n                \{\n    \n                \}\)\;\n         \n        \}\n    \}\)\;\n\n\n\/\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\/\n\nvar helloApp \= angular\.module\(\&quot;helloApp\&quot;\, \[\]\)\;\n\nhelloApp\.directive\(\'myDirective\'\, function \(\) \{\n    return function \(scope\, element\, attr\) \{\n        attr\.\$observe\(\'value\'\, function\(actual_value\) \{\n            element\.val\(actual_value\)\;\n        \}\)\;\n        attr\.\$observe\(\'my\-checked\'\, function\(actual_value\) \{\n            debugger\;\n            element\.attr\(\'checked\'\,actual_value\)\;\n        \}\)\;\n    \}\n\}\)\;\n\nhelloApp\.controller\(\&quot;CompanyCtrl\&quot;\, function\(\$scope\)\n\{\n    \$scope\.companies \= \[\n\n        \/\*\{\n            \'id\'\: \'Cognizant Technologies\'\,\n            \'host\'\: 100000\,\n            \'selector\'\: \'Bangalore\'\n        \}\,\n        \{\n            \'id\'\: \'Wipro\'\,\n            \'host\'\: 115000\,\n            \'selector\'\: \'Bangalore\'\n        \}\,\n        \{\n            \'id\'\: \'Tata Consultancy Services \(TCS\)\'\,\n            \'host\'\: 150000\,\n            \'selector\'\: \'Bangalore\'\n        \}\,\n        \{\n            \'id\'\: \'HCL Technologies\'\,\n            \'host\'\: 90000\,\n            \'selector\'\: \'Noida\'\n        \}\,\*\/\n    \]\;\n\n    window\.initSelectors \= function\(selectors\)\n\	\{\n        \$scope\.companies \= selectors\;\n        \$scope\.\$apply\(\)\;\n\	\}\;\n\n    \$scope\.addRow \= function \(\)\n    \{\n        \$scope\.companies\.push\(\{\'id\'\: \$scope\.id\, \'host\'\: \$scope\.host\, \'selector\'\: \$scope\.selector\}\)\;\n        \$scope\.id \= \'\'\;\n        \$scope\.host \= \'\'\;\n        \$scope\.selector \= \'\'\;\n    \}\;\n\}\)\;</find>
+      <find>al</find>
+      <find>ststistic</find>
+      <find>has</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/background.js" />
+        <option value="$PROJECT_DIR$/build.pl" />
+        <option value="$PROJECT_DIR$/manifest.json" />
+        <option value="$PROJECT_DIR$/popup.html" />
+        <option value="$PROJECT_DIR$/popup.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="324" />
+    <option name="y" value="50" />
+    <option name="width" value="769" />
+    <option name="height" value="900" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="OriginRequestsOnly" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OriginRequestsOnly" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5cd540e2-f95b-43a1-9168-f907dcbb63d4" name="Default" comment="" />
+      <created>1529761360834</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1529761360834</updated>
+      <workItem from="1529761362384" duration="15543000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="15543000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1554" height="916" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2496749" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/background.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.pl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="43" column="4" lean-forward="true" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/popup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="91" column="38" lean-forward="false" selection-start-line="91" selection-start-column="38" selection-end-line="91" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/popup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="62" column="48" lean-forward="false" selection-start-line="62" selection-start-column="48" selection-end-line="62" selection-end-column="48" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -15,7 +15,7 @@ sub END {
 my $build_dir = './workspace/build_dir/';
 my $target_dir = './workspace/target_dir';
 my $tmp_dir = './workspace/tmp';
-my @files = ('img');
+my @files = ('img', 'lib');
 
 try {
     
@@ -41,7 +41,7 @@ try {
     }
     
 	print STDERR "Obfuscete: background.js, park.js...";
-    #`java -jar ./workspace/closureJS/compiler.jar --js $build_dir/background.js --js_output_file $build_dir/background.js`;
+    `java -jar ./workspace/closureJS/compiler.jar --js $build_dir/background.js --js_output_file $build_dir/background.js`;
 	#`java -jar ./workspace/closureJS/compiler.jar --js $build_dir/park.js --js_output_file $build_dir/park.js`;
 	print STDERR "Ok\n";
 	
